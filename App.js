@@ -36,9 +36,9 @@ function MyTabs() {
         name="Search"
         component={Search}
         options={{
-          tabBarLabel: 'Search',
+          tabBarLabel: 'Explore',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="search-web" size={24} color={color}  />
+            <MaterialCommunityIcons name="search-web" size={size} color={color}  />
           ),
         }}
       />
@@ -46,9 +46,9 @@ function MyTabs() {
         name="Notifications"
         component={Notifications}
         options={{
-          tabBarLabel: 'Updates',
+          tabBarLabel: 'Inbox',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={size} />
+            <MaterialCommunityIcons name="chat-processing-outline"  size={24} color={color} />
           ),
         }}
       />
