@@ -3,37 +3,44 @@ import { View, Text, TouchableOpacity, StyleSheet, Modal, ScrollView, TextInput,
 
 const Profile = () => {
   const [isSignUpModalVisible, setIsSignUpModalVisible] = useState(false);
+  const [isLoginModalVisible, setIsLoginModalVisible] = useState(false);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const onclik = () => {
-    Alert.alert("Voleur Codeloccol");
-  };
 
   const toggleSignUpModal = () => {
     setIsSignUpModalVisible(!isSignUpModalVisible);
   };
 
-  const handleModalPress = () => {
-    setIsSignUpModalVisible(false);
+  const toggleLoginModal = () => {
+    setIsLoginModalVisible(!isLoginModalVisible);
   };
 
   const handleSignUp = () => {
     if (!username || !email || !password) {
-      Alert.alert('Merci de remplir tous les champs.');
+      Alert.alert('Please fill in all fields.');
     } else {
-      // Par exemple, appelez une fonction pour envoyer les données au backend
       console.log('Creating account...');
       console.log('Username:', username);
       console.log('Email:', email);
       console.log('Password:', password);
 
-      // Fermez la modal après la création du compte
       setIsSignUpModalVisible(false);
-
-      // Réinitialisez les champs de texte
       setUsername('');
+      setEmail('');
+      setPassword('');
+    }
+  };
+
+  const handleLogin = () => {
+    if (!email || !password) {
+      Alert.alert('Please fill in all fields.');
+    } else {
+      console.log('Logging in...');
+      console.log('Email:', email);
+      console.log('Password:', password);
+
+      setIsLoginModalVisible(false);
       setEmail('');
       setPassword('');
     }
@@ -44,7 +51,7 @@ const Profile = () => {
       <View style={styles.container}>
         <Text style={{ fontSize: 15, fontWeight: '500' }}>Log in to start planning your next trip</Text>
         <View style={styles.containertouchable}>
-          <TouchableOpacity onPress={onclik} style={styles.button}>
+          <TouchableOpacity onPress={toggleLoginModal} style={styles.button}>
             <Text style={styles.textbutton}>
               Login
             </Text>
@@ -61,7 +68,7 @@ const Profile = () => {
           transparent={true}
           onRequestClose={toggleSignUpModal}
         >
-          <TouchableWithoutFeedback onPress={handleModalPress}>
+          <TouchableWithoutFeedback onPress={toggleSignUpModal}>
             <View style={styles.modalContainer}>
               <TouchableWithoutFeedback onPress={() => null}>
                 <View style={styles.modalContent}>
@@ -87,6 +94,37 @@ const Profile = () => {
                     onChangeText={setPassword}
                   />
                   <Button title="Sign Up" onPress={handleSignUp} />
+                </View>
+              </TouchableWithoutFeedback>
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
+        <Modal
+          visible={isLoginModalVisible}
+          animationType="slide"
+          transparent={true}
+          onRequestClose={toggleLoginModal}
+        >
+          <TouchableWithoutFeedback onPress={toggleLoginModal}>
+            <View style={styles.modalContainer}>
+              <TouchableWithoutFeedback onPress={() => null}>
+                <View style={styles.modalContent}>
+                  <Text style={styles.modalHeading}>Login</Text>
+                  <TextInput
+                    style={styles.input}
+                    placeholder="Email"
+                    keyboardType="email-address"
+                    value={email}
+                    onChangeText={setEmail}
+                  />
+                  <TextInput
+                    style={styles.input}
+                    placeholder="Password"
+                    secureTextEntry={true}
+                    value={password}
+                    onChangeText={setPassword}
+                  />
+                  <Button title="Login" onPress={handleLogin} />
                 </View>
               </TouchableWithoutFeedback>
             </View>
