@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Modal, ScrollView, TextInput, Button, TouchableWithoutFeedback, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Modal, ScrollView, TextInput, Button, TouchableWithoutFeedback, Alert,Image } from 'react-native';
 
 const Profile = () => {
   const [isSignUpModalVisible, setIsSignUpModalVisible] = useState(false);
@@ -131,6 +131,13 @@ const Profile = () => {
           </TouchableWithoutFeedback>
         </Modal>
       </View>
+      <View style={{ flexDirection: 'row', padding: 10, border: 3, borderColor: '#ccc',justifyContent: "space-around", }}>
+      <View style={{ marginLeft: 10, padding:20 }}>
+        <Text  style={{fontSize:15,fontWeight:"bold"}}>Airbnb your place</Text>
+        <Text>It's simple to get set up and start  earning.</Text>
+      </View>
+      <Image source={require('../assets/House.png')} style={{ width: 130, height: 130 }} />
+    </View>
     </ScrollView>
   );
 }
@@ -182,6 +189,23 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     elevation: 5,
     width: '80%',
+  },
+  listItem: {
+    flexDirection: 'row',
+    padding: 10,
+    borderBottomWidth: 1,
+    borderColor: '#ccc',
+  },
+  listingImage: {
+    width: 50,
+    height: 50,
+  },
+  listingTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  listingPrice: {
+    fontSize: 14,
   },
   modalHeading: {
     fontSize: 18,

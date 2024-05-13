@@ -3,14 +3,10 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import  Profile from './components/Profile';
-import  Notifications  from './components/Notifications';
+import Profile from './components/Profile';
+import Notifications from './components/Notifications';
 import Home from './components/Home';
 import Search from './components/Search';
-
-
-
-
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +28,7 @@ function MyTabs() {
           ),
         }}
       />
-         <Tab.Screen
+      <Tab.Screen
         name="Search"
         component={Search}
         options={{
@@ -52,19 +48,18 @@ function MyTabs() {
           ),
         }}
       />
-    
       <Tab.Screen
-        name="Profile"
+        name='Profile'
         component={Profile}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color, size }) => (
+            
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
+        
         }}
       />
-      
-      
     </Tab.Navigator>
   );
 }
