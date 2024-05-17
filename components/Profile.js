@@ -61,6 +61,26 @@ const Profile = () => {
               <Text style={styles.link}> Sign up</Text>
             </TouchableOpacity>
           </Text>
+             <View style={styles.container}>
+                <Text style={styles.orText}>OU</Text>
+                <TouchableOpacity style={styles.button}>
+                  <Image source={{ uri: 'https://path/to/facebook-icon.png' }} style={styles.icon} />
+                  <Text style={styles.buttonText}>Continuer avec Facebook</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button}>
+                  <Image source={{ uri: 'https://path/to/google-icon.png' }} style={styles.icon} />
+                  <Text style={styles.buttonText}>Continuer avec Google</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button}>
+                  <Image source={{ uri: 'https://path/to/apple-icon.png' }} style={styles.icon} />
+                  <Text style={styles.buttonText}>Continuer avec Apple</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button}>
+                  <Image source={{ uri: 'https://path/to/email-icon.png' }} style={styles.icon} />
+                  <Text style={styles.buttonText}>Continuer avec une adresse e-mail</Text>
+                </TouchableOpacity>
+              </View>
+
         </View>
         <Modal
           visible={isSignUpModalVisible}
@@ -211,6 +231,36 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+  },
+  orText: {
+    marginBottom: 16,
+    fontSize: 16,
+    color: '#666',
+  },
+  button: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    padding: 10,
+    marginVertical: 8,
+    width: '80%',
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#ddd',
+  },
+  buttonText: {
+    fontSize: 16,
+    marginLeft: 8,
+  },
+  icon: {
+    width: 24,
+    height: 24,
   },
 });
 

@@ -13,15 +13,15 @@ export default function Notifications() {
       >
         <Text style={[styles.tabText, selectedTab === 'Messages' && styles.activeTabText]}>Messages</Text>
       </TouchableOpacity>
-      <TouchableOpacity 
+      {/* <TouchableOpacity 
         style={[styles.tab, selectedTab === 'Notifications' && styles.activeTab]}
         onPress={() => setSelectedTab('Notifications')}
       >
         <Text style={[styles.tabText, selectedTab === 'Notifications' && styles.activeTabText]}>Notifications</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
     <View style={styles.contentContainer}>
-      {selectedTab === 'Notifications' && (
+      {selectedTab === 'Messages' && (
         <Text style={styles.caughtUpText}>les notifications</Text>
       )}
     </View>
@@ -44,16 +44,13 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     alignItems: 'center',
   },
-  activeTab: {
-    borderBottomWidth: 2,
-    borderBottomColor: '#000',
-  },
+
   tabText: {
     fontSize: 16,
     color: '#888',
   },
   activeTabText: {
-    color: 'red',
+    color: 'green',
   },
   contentContainer: {
     flex: 1,
