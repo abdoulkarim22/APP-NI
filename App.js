@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View,StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Profile from './components/Profile';
-import Home from './components/Home';
 import Search from './components/Search';
+import Favoris from './components/Favoris';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,17 +17,7 @@ function MyTabs() {
         tabBarActiveTintColor: 'green',
       }}
     >
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
+       <Tab.Screen
         name="Search"
         component={Search}
         options={{
@@ -35,6 +25,18 @@ function MyTabs() {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="search-web" size={size} color={color}  />
           ),
+        }}
+      />
+         <Tab.Screen
+        name='Favoris'
+        component={Favoris}
+        options={{
+          tabBarLabel: 'Favoris',
+          tabBarIcon: ({ color, size }) => (
+            
+            <MaterialCommunityIcons name="heart" color={color} size={size} />
+          ),
+        
         }}
       />
       <Tab.Screen
@@ -56,7 +58,7 @@ function MyTabs() {
 export default function App() {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <MyTabs/>
     </NavigationContainer>
   );
 }
