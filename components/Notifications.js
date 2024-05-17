@@ -22,7 +22,7 @@ export default function Notifications() {
     </View>
     <View style={styles.contentContainer}>
       {selectedTab === 'Notifications' && (
-        <Text style={styles.caughtUpText}>You're all caught up</Text>
+        <Text style={styles.caughtUpText}>les notifications</Text>
       )}
     </View>
   </View>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     color: '#888',
   },
   activeTabText: {
-    color: '#000',
+    color: 'red',
   },
   contentContainer: {
     flex: 1,
