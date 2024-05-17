@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Modal, ScrollView, TextInput, Button, TouchableWithoutFeedback, Alert,Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Modal, ScrollView, TextInput, Button, TouchableWithoutFeedback, Alert,Image, } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Profile = () => {
   const [isSignUpModalVisible, setIsSignUpModalVisible] = useState(false);
@@ -51,7 +52,7 @@ const Profile = () => {
       <View style={styles.container}>
         <Text style={{ fontSize: 15, fontWeight: '500' }}>Log in to start planning your next trip</Text>
         <View style={styles.containertouchable}>
-          <TouchableOpacity onPress={toggleLoginModal} style={styles.button}>
+          <TouchableOpacity onPress={toggleLoginModal} style={styles.login}>
             <Text style={styles.textbutton}>
               Login
             </Text>
@@ -63,22 +64,14 @@ const Profile = () => {
           </Text>
              <View style={styles.container}>
                 <Text style={styles.orText}>OU</Text>
-                <TouchableOpacity style={styles.button}>
-                  <Image source={{ uri: 'https://path/to/facebook-icon.png' }} style={styles.icon} />
-                  <Text style={styles.buttonText}>Continuer avec Facebook</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}>
-                  <Image source={{ uri: 'https://path/to/google-icon.png' }} style={styles.icon} />
-                  <Text style={styles.buttonText}>Continuer avec Google</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}>
-                  <Image source={{ uri: 'https://path/to/apple-icon.png' }} style={styles.icon} />
-                  <Text style={styles.buttonText}>Continuer avec Apple</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}>
-                  <Image source={{ uri: 'https://path/to/email-icon.png' }} style={styles.icon} />
-                  <Text style={styles.buttonText}>Continuer avec une adresse e-mail</Text>
-                </TouchableOpacity>
+                <TouchableOpacity style={styles.touchableOpacity}>
+                    <MaterialCommunityIcons name="facebook" size={24} color="#4267B2" style={styles.icon} />
+                    <Text style={styles.buttonText}>Continuer avec Facebook</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.touchableOpacity}>
+                    <MaterialCommunityIcons name="google" size={24} color="#DB4437" style={styles.icon} />
+                    <Text style={styles.buttonText}>Continuer avec Google</Text>
+                  </TouchableOpacity>
               </View>
 
         </View>
@@ -179,11 +172,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingHorizontal: 10,
   },
-  button: {
-    backgroundColor: 'green',
-    borderRadius: 5,
-    padding: 8,
-  },
+   login: {
+     backgroundColor: 'green',
+     borderRadius: 5,
+     padding: 8,
+   },
   textbutton: {
     color: 'white',
     fontSize: 20,
@@ -210,16 +203,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     width: '80%',
   },
-  listItem: {
-    flexDirection: 'row',
-    padding: 10,
-    borderBottomWidth: 1,
-    borderColor: '#ccc',
-  },
-  listingImage: {
-    width: 50,
-    height: 50,
-  },
+
   listingTitle: {
     fontSize: 18,
     fontWeight: 'bold',
@@ -243,13 +227,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#666',
   },
-  button: {
+  touchableOpacity: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#fff',
     padding: 10,
     marginVertical: 8,
-    width: '80%',
+    width: '100%',
     borderRadius: 5,
     borderWidth: 1,
     borderColor: '#ddd',

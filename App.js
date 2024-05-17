@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Profile from './components/Profile';
-import Notifications from './components/Notifications';
 import Home from './components/Home';
 import Search from './components/Search';
 
@@ -15,7 +14,7 @@ function MyTabs() {
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarActiveTintColor: '#e91e63',
+        tabBarActiveTintColor: 'green',
       }}
     >
       <Tab.Screen
@@ -35,16 +34,6 @@ function MyTabs() {
           tabBarLabel: 'Explore',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="search-web" size={size} color={color}  />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Notifications"
-        component={Notifications}
-        options={{
-          tabBarLabel: 'Inbox',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="chat-processing-outline"  size={24} color={color} />
           ),
         }}
       />
