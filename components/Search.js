@@ -21,6 +21,87 @@ const properties = [
     price: '1170 € par nuit',
     rating: '4,8',
   },
+  {
+    id: '3',
+    imageUrl: require('../assets/Water.jpeg'), // Use require function directly
+    location: 'Estercuel, Espagne',
+    constructionDate: '1628',
+    dateRange: '19-24 mai',
+    price: '55 € par nuit',
+    rating: '5,0',
+  },
+  {
+    id: '4',
+    imageUrl: require('../assets/Profile.jpeg'), // Use require function directly
+    location: 'Seixas, Caminha, Portugal',
+    constructionDate: '1909',
+    dateRange: '18-23 mai',
+    price: '1170 € par nuit',
+    rating: '4,8',
+  },
+  {
+    id: '5',
+    imageUrl: require('../assets/Water.jpeg'), // Use require function directly
+    location: 'Estercuel, Espagne',
+    constructionDate: '1628',
+    dateRange: '19-24 mai',
+    price: '55 € par nuit',
+    rating: '5,0',
+  },
+  {
+    id: '6',
+    imageUrl: require('../assets/Profile.jpeg'), // Use require function directly
+    location: 'Seixas, Caminha, Portugal',
+    constructionDate: '1909',
+    dateRange: '18-23 mai',
+    price: '1170 € par nuit',
+    rating: '4,8',
+  },
+  {
+    id: '7',
+    imageUrl: require('../assets/Water.jpeg'), // Use require function directly
+    location: 'Estercuel, Espagne',
+    constructionDate: '1628',
+    dateRange: '19-24 mai',
+    price: '55 € par nuit',
+    rating: '5,0',
+  },
+  {
+    id: '8',
+    imageUrl: require('../assets/Profile.jpeg'), // Use require function directly
+    location: 'Seixas, Caminha, Portugal',
+    constructionDate: '1909',
+    dateRange: '18-23 mai',
+    price: '1170 € par nuit',
+    rating: '4,8',
+  },
+  {
+    id: '9',
+    imageUrl: require('../assets/Water.jpeg'), // Use require function directly
+    location: 'Estercuel, Espagne',
+    constructionDate: '1628',
+    dateRange: '19-24 mai',
+    price: '55 € par nuit',
+    rating: '5,0',
+  },
+  {
+    id: '10',
+    imageUrl: require('../assets/Profile.jpeg'), // Use require function directly
+    location: 'Seixas, Caminha, Portugal',
+    constructionDate: '1909',
+    dateRange: '18-23 mai',
+    price: '1170 € par nuit',
+    rating: '4,8',
+  },
+  {
+    id: '11',
+    imageUrl: require('../assets/Water.jpeg'), // Use require function directly
+    location: 'Estercuel, Espagne',
+    constructionDate: '1628',
+    dateRange: '19-24 mai',
+    price: '55 € par nuit',
+    rating: '5,0',
+  },
 ];
 
 const Search = () => {
