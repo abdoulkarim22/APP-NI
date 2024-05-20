@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, Image, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, Image, StyleSheet, } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import { NavigationContainer } from '@react-navigation/native';
 
 const properties = [
   {
@@ -88,7 +90,6 @@ const properties = [
     id: '10',
     imageUrl: require('../assets/House10.jpg'), // Use require function directly
     location: 'Seixas, Caminha, Portugal',
-    constructionDate: '1909',
     dateRange: '18-23 mai',
     price: '1170 € par nuit',
     rating: '4,8',
@@ -106,18 +107,21 @@ const properties = [
 
 const Search = () => {
   const renderItem = ({ item }) => (
-    <View style={styles.card}>
-      <Image source={item.imageUrl} style={styles.image} />
+      <View style={styles.card}>
+      <View style={styles.imageContainer}>
+        <Image source={item.imageUrl} style={styles.image} />
+        {/* <AntDesign  name="hearto" size={30} color="green"  style={styles.heartIcon} /> */}
+      </View>
       <View style={styles.cardContent}>
         <Text style={styles.location}>{item.location}</Text>
-        <Text style={styles.constructionDate}>Date de construction : {item.constructionDate}</Text>
-        <Text style={styles.dateRange}>{item.dateRange} · Professionnel</Text>
         <Text style={styles.price}>{item.price}</Text>
+        
         <View style={styles.ratingContainer}>
           <MaterialCommunityIcons name="star" size={20} color="#FFD700" />
           <Text style={styles.rating}>{item.rating}</Text>
         </View>
       </View>
+       <Text style={{textAlign:"right",padding:20,}}>details</Text>
     </View>
   );
 
@@ -159,6 +163,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginBottom: 10,
   },
+  heartIcon: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+  },
   searchInput: {
     flex: 1,
     height: 40,
@@ -181,17 +190,18 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     overflow: 'hidden',
     marginBottom: 10,
-    elevation: 1,
+    elevation: 10,
   },
   image: {
     width: '100%',
     height: 200,
+
   },
   cardContent: {
     padding: 10,
   },
   location: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
   },
   constructionDate: {
@@ -201,10 +211,11 @@ const styles = StyleSheet.create({
   dateRange: {
     fontSize: 14,
     color: '#555',
+    textAlign:"right"
   },
   price: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     marginTop: 5,
   },
   ratingContainer: {
