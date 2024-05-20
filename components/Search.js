@@ -1,8 +1,7 @@
-import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, Image, StyleSheet, } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, FlatList, Image, StyleSheet,Modal,Pressable } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { NavigationContainer } from '@react-navigation/native';
 
 const properties = [
   {
@@ -106,22 +105,28 @@ const properties = [
 ];
 
 const Search = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedProperty, setSelectedProperty] = useState(null);
+
   const renderItem = ({ item }) => (
-      <View style={styles.card}>
+    <View style={styles.card}>
       <View style={styles.imageContainer}>
         <Image source={item.imageUrl} style={styles.image} />
-        {/* <AntDesign  name="hearto" size={30} color="green"  style={styles.heartIcon} /> */}
       </View>
       <View style={styles.cardContent}>
         <Text style={styles.location}>{item.location}</Text>
         <Text style={styles.price}>{item.price}</Text>
-        
         <View style={styles.ratingContainer}>
           <MaterialCommunityIcons name="star" size={20} color="#FFD700" />
           <Text style={styles.rating}>{item.rating}</Text>
         </View>
       </View>
-       <Text style={{textAlign:"right",padding:20,}}>details</Text>
+      <TouchableOpacity onPress={() => {
+        setSelectedProperty(item);
+        setModalVisible(true);
+      }}>
+       <Text style={{ textAlign: 'right', padding: 20, textDecorationLine: 'underline', color: 'green' }}>More details</Text>
+      </TouchableOpacity>
     </View>
   );
 
@@ -129,10 +134,7 @@ const Search = () => {
     <View style={styles.container}>
       <View style={styles.searchContainer}>
         <MaterialCommunityIcons name="magnify" size={24} color="#000" />
-        <TextInput
-          style={styles.searchInput}
-          placeholder="Destination"
-        />
+        <TextInput style={styles.searchInput} placeholder="Destination" />
         <TouchableOpacity style={styles.filterButton}>
           <MaterialCommunityIcons name="filter-variant" size={24} color="#000" />
         </TouchableOpacity>
@@ -141,10 +143,29 @@ const Search = () => {
         data={properties}
         renderItem={renderItem}
         keyExtractor={item => item.id}
-        ListHeaderComponent={() => (
-          <View></View>
-        )}
       />
+      {selectedProperty && (
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => setModalVisible(!modalVisible)}
+        >
+          <View style={styles.modalView}>
+            <Text style={styles.location}>{selectedProperty.location}</Text>
+            <Text style={styles.price}>{selectedProperty.price}</Text>
+            <Text style={styles.constructionDate}>Construction Date: {selectedProperty.constructionDate}</Text>
+            <Text style={styles.dateRange}>Available: {selectedProperty.dateRange}</Text>
+            <Text style={styles.rating}>Rating: {selectedProperty.rating}</Text>
+            <Pressable
+              style={styles.closeButton}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.closeButtonText}>Close</Text>
+            </Pressable>
+          </View>
+        </Modal>
+      )}
     </View>
   );
 };
@@ -226,6 +247,34 @@ const styles = StyleSheet.create({
   rating: {
     fontSize: 16,
     marginLeft: 5,
+  },
+  modalView: {
+    flex: 1,
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  closeButton: {
+    backgroundColor: '#2196F3',
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+    marginTop: 20,
+  },
+  closeButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });
 
