@@ -5,7 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 const properties = [
   {
     id: '1',
-    imageUrl: require('../assets/Water.jpeg'), // Use require function directly
+    imageUrl: require('../assets/House1.jpg'), // Use require function directly
     location: 'Estercuel, Espagne',
     constructionDate: '1628',
     dateRange: '19-24 mai',
@@ -14,7 +14,7 @@ const properties = [
   },
   {
     id: '2',
-    imageUrl: require('../assets/Profile.jpeg'), // Use require function directly
+    imageUrl: require('../assets/House2.jpg'), // Use require function directly
     location: 'Seixas, Caminha, Portugal',
     constructionDate: '1909',
     dateRange: '18-23 mai',
@@ -23,7 +23,7 @@ const properties = [
   },
   {
     id: '3',
-    imageUrl: require('../assets/Water.jpeg'), // Use require function directly
+    imageUrl: require('../assets/House3.jpg'), // Use require function directly
     location: 'Estercuel, Espagne',
     constructionDate: '1628',
     dateRange: '19-24 mai',
@@ -32,7 +32,7 @@ const properties = [
   },
   {
     id: '4',
-    imageUrl: require('../assets/Profile.jpeg'), // Use require function directly
+    imageUrl: require('../assets/House4.jpg'), // Use require function directly
     location: 'Seixas, Caminha, Portugal',
     constructionDate: '1909',
     dateRange: '18-23 mai',
@@ -41,7 +41,7 @@ const properties = [
   },
   {
     id: '5',
-    imageUrl: require('../assets/Water.jpeg'), // Use require function directly
+    imageUrl: require('../assets/House5.jpg'), // Use require function directly
     location: 'Estercuel, Espagne',
     constructionDate: '1628',
     dateRange: '19-24 mai',
@@ -50,7 +50,7 @@ const properties = [
   },
   {
     id: '6',
-    imageUrl: require('../assets/Profile.jpeg'), // Use require function directly
+    imageUrl: require('../assets/House6.jpg'), // Use require function directly
     location: 'Seixas, Caminha, Portugal',
     constructionDate: '1909',
     dateRange: '18-23 mai',
@@ -59,16 +59,16 @@ const properties = [
   },
   {
     id: '7',
-    imageUrl: require('../assets/Water.jpeg'), // Use require function directly
+    imageUrl: require('../assets/House7.jpg'), // Use require function directly
     location: 'Estercuel, Espagne',
     constructionDate: '1628',
     dateRange: '19-24 mai',
-    price: '55 € par nuit',
+    price: '1170 € par nuit',
     rating: '5,0',
   },
   {
     id: '8',
-    imageUrl: require('../assets/Profile.jpeg'), // Use require function directly
+    imageUrl: require('../assets/House8.jpg'), // Use require function directly
     location: 'Seixas, Caminha, Portugal',
     constructionDate: '1909',
     dateRange: '18-23 mai',
@@ -77,7 +77,7 @@ const properties = [
   },
   {
     id: '9',
-    imageUrl: require('../assets/Water.jpeg'), // Use require function directly
+    imageUrl: require('../assets/House9.jpg'), // Use require function directly
     location: 'Estercuel, Espagne',
     constructionDate: '1628',
     dateRange: '19-24 mai',
@@ -86,7 +86,7 @@ const properties = [
   },
   {
     id: '10',
-    imageUrl: require('../assets/Profile.jpeg'), // Use require function directly
+    imageUrl: require('../assets/House10.jpg'), // Use require function directly
     location: 'Seixas, Caminha, Portugal',
     constructionDate: '1909',
     dateRange: '18-23 mai',
@@ -95,7 +95,7 @@ const properties = [
   },
   {
     id: '11',
-    imageUrl: require('../assets/Water.jpeg'), // Use require function directly
+    imageUrl: require('../assets/House11.jpg'), // Use require function directly
     location: 'Estercuel, Espagne',
     constructionDate: '1628',
     dateRange: '19-24 mai',
