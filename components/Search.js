@@ -108,6 +108,13 @@ const Search = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedProperty, setSelectedProperty] = useState(null);
 
+  
+  const [iconColor, setIconColor] = useState('green');
+
+  const handlePress = () => {
+    setIconColor(iconColor === 'green' ? 'red' : 'green');
+  };
+
   const renderItem = ({ item }) => (
     <View style={styles.card}>
       <View style={styles.imageContainer}>
@@ -120,12 +127,15 @@ const Search = () => {
           <MaterialCommunityIcons name="star" size={20} color="#FFD700" />
           <Text style={styles.rating}>{item.rating}</Text>
         </View>
+        <TouchableOpacity style={styles.heartIconContainer} onPress={handlePress}>
+          <AntDesign name="hearto" size={24} color={iconColor} />
+        </TouchableOpacity>
       </View>
       <TouchableOpacity onPress={() => {
         setSelectedProperty(item);
         setModalVisible(true);
       }}>
-       <Text style={{ textAlign: 'right', padding: 20, textDecorationLine: 'underline', color: 'green' }}>More details</Text>
+        <Text style={{ textAlign: 'right', padding: 20, textDecorationLine: 'underline', color: 'green' }}>More details</Text>
       </TouchableOpacity>
     </View>
   );
@@ -176,6 +186,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 10,
   },
+  
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -275,6 +286,20 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  ratingContainer: {
+    // Your existing styles for the rating container
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  rating: {
+    // Your existing styles for the rating text
+    marginLeft: 5,
+  },
+  heartIconContainer: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
   },
 });
 
