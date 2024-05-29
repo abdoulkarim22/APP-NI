@@ -12,6 +12,7 @@ const properties = [
     dateRange: '19-24 mai',
     price: '55 € par nuit',
     rating: '5,0',
+    favorite: false,
   },
   {
     id: '2',
@@ -21,6 +22,7 @@ const properties = [
     dateRange: '18-23 mai',
     price: '1170 € par nuit',
     rating: '4,8',
+    favorite: false,
   },
   {
     id: '3',
@@ -30,6 +32,7 @@ const properties = [
     dateRange: '19-24 mai',
     price: '55 € par nuit',
     rating: '5,0',
+    favorite: false,
   },
   {
     id: '4',
@@ -39,6 +42,7 @@ const properties = [
     dateRange: '18-23 mai',
     price: '1170 € par nuit',
     rating: '4,8',
+    favorite: false,
   },
   {
     id: '5',
@@ -48,6 +52,7 @@ const properties = [
     dateRange: '19-24 mai',
     price: '55 € par nuit',
     rating: '5,0',
+    favorite: false,
   },
   {
     id: '6',
@@ -57,6 +62,7 @@ const properties = [
     dateRange: '18-23 mai',
     price: '1170 € par nuit',
     rating: '4,8',
+    favorite: false,
   },
   {
     id: '7',
@@ -66,7 +72,9 @@ const properties = [
     dateRange: '19-24 mai',
     price: '1170 € par nuit',
     rating: '5,0',
+    favorite: false,
   },
+
   {
     id: '8',
     imageUrl: require('../assets/House8.jpg'), // Use require function directly
@@ -75,6 +83,7 @@ const properties = [
     dateRange: '18-23 mai',
     price: '1170 € par nuit',
     rating: '4,8',
+   favorite: false,
   },
   {
     id: '9',
@@ -84,6 +93,7 @@ const properties = [
     dateRange: '19-24 mai',
     price: '55 € par nuit',
     rating: '5,0',
+    favorite: false,
   },
   {
     id: '10',
@@ -92,6 +102,7 @@ const properties = [
     dateRange: '18-23 mai',
     price: '1170 € par nuit',
     rating: '4,8',
+    favorite: false,
   },
   {
     id: '11',
@@ -101,19 +112,18 @@ const properties = [
     dateRange: '19-24 mai',
     price: '55 € par nuit',
     rating: '5,0',
+    favorite: false,
   },
 ];
 
 const Search = () => {
-  const [modalVisible, setModalVisible] = useState(false);
   const [selectedProperty, setSelectedProperty] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [isfavoris, setfavoris] = useState(false);
 
-  
-  const [iconColor, setIconColor] = useState('green');
-
-  const handlePress = () => {
-    setIconColor(iconColor === 'green' ? 'red' : 'green');
-  };
+  const functionchangecolor = () => {
+    setfavoris(!isfavoris);
+  }
 
   const renderItem = ({ item }) => (
     <View style={styles.card}>
@@ -127,8 +137,8 @@ const Search = () => {
           <MaterialCommunityIcons name="star" size={20} color="#FFD700" />
           <Text style={styles.rating}>{item.rating}</Text>
         </View>
-        <TouchableOpacity style={styles.heartIconContainer} onPress={handlePress}>
-          <AntDesign name="hearto" size={24} color={iconColor} />
+        <TouchableOpacity style={styles.heartIconContainer} onPress={functionchangecolor}>
+          <AntDesign name="heart" size={24} color={isfavoris ? 'black' : 'green'}/>
         </TouchableOpacity>
       </View>
       <TouchableOpacity onPress={() => {

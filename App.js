@@ -6,6 +6,7 @@ import Profile from './components/Profile';
 import Favoris from './components/Favoris';
 import Search from './components/Search';
 
+
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
@@ -16,6 +17,7 @@ function MyTabs() {
         tabBarActiveTintColor: 'green',
       }}
     >
+ 
       <Tab.Screen
         name="Search"
         component={Search}
