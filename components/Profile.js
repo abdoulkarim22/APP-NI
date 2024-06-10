@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Modal, ScrollView, TextInput, Button, TouchableWithoutFeedback, Alert,Image, } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
+// (Pressable , TouchableOpacity, TouchableWithoutFeedback, Button), (ScrollView, view, SafeArea), 
 const Profile = () => {
   const [isSignUpModalVisible, setIsSignUpModalVisible] = useState(false);
   const [isLoginModalVisible, setIsLoginModalVisible] = useState(false);

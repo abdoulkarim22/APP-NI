@@ -7,70 +7,70 @@ const properties = [
   {
     id: '1',
     imageUrl: require('../assets/House1.jpg'), // Use require function directly
-    location: 'Estercuel, Espagne',
+    location: 'Hôtel Sepia',
     constructionDate: '1628',
     dateRange: '19-24 mai',
-    price: '55 € par nuit',
+    price: '155 € par mois',
     rating: '5,0',
     favorite: false,
   },
   {
     id: '2',
     imageUrl: require('../assets/House2.jpg'), // Use require function directly
-    location: 'Seixas, Caminha, Portugal',
+    location: 'Hôtel Quartier, an Ascend Hotel Collection Member',
     constructionDate: '1909',
     dateRange: '18-23 mai',
-    price: '1170 € par nuit',
+    price: '1170 € par mois',
     rating: '4,8',
     favorite: false,
   },
   {
     id: '3',
     imageUrl: require('../assets/House3.jpg'), // Use require function directly
-    location: 'Estercuel, Espagne',
+    location: 'Auberge Aux Deux Lions',
     constructionDate: '1628',
     dateRange: '19-24 mai',
-    price: '55 € par nuit',
+    price: '555 € par mois',
     rating: '5,0',
     favorite: false,
   },
   {
     id: '4',
     imageUrl: require('../assets/House4.jpg'), // Use require function directly
-    location: 'Seixas, Caminha, Portugal',
+    location: 'Le Capitole Hotel',
     constructionDate: '1909',
     dateRange: '18-23 mai',
-    price: '1170 € par nuit',
+    price: '1370 € par mois',
     rating: '4,8',
     favorite: false,
   },
   {
     id: '5',
     imageUrl: require('../assets/House5.jpg'), // Use require function directly
-    location: 'Estercuel, Espagne',
+    location: 'Hôtel des Coutellier',
     constructionDate: '1628',
     dateRange: '19-24 mai',
-    price: '55 € par nuit',
+    price: '355 € par mois',
     rating: '5,0',
     favorite: false,
   },
   {
     id: '6',
     imageUrl: require('../assets/House6.jpg'), // Use require function directly
-    location: 'Seixas, Caminha, Portugal',
+    location: 'Grand Times Hotel - Aéroport de Québec ',
     constructionDate: '1909',
     dateRange: '18-23 mai',
-    price: '1170 € par nuit',
+    price: '870 € par mois',
     rating: '4,8',
     favorite: false,
   },
   {
     id: '7',
     imageUrl: require('../assets/House7.jpg'), // Use require function directly
-    location: 'Estercuel, Espagne',
+    location: 'Best Western Plus Centre-ville/City Centre Québec',
     constructionDate: '1628',
     dateRange: '19-24 mai',
-    price: '1170 € par nuit',
+    price: '270 € par mois',
     rating: '5,0',
     favorite: false,
   },
@@ -78,39 +78,39 @@ const properties = [
   {
     id: '8',
     imageUrl: require('../assets/House8.jpg'), // Use require function directly
-    location: 'Seixas, Caminha, Portugal',
+    location: 'Hôtel Château Bellevue',
     constructionDate: '1909',
     dateRange: '18-23 mai',
-    price: '1170 € par nuit',
+    price: '700 € par mois',
     rating: '4,8',
    favorite: false,
   },
   {
     id: '9',
     imageUrl: require('../assets/House9.jpg'), // Use require function directly
-    location: 'Estercuel, Espagne',
+    location: 'Hôtel & Suites Le Dauphin Québec',
     constructionDate: '1628',
     dateRange: '19-24 mai',
-    price: '55 € par nuit',
+    price: '500 € par mois',
     rating: '5,0',
     favorite: false,
   },
   {
     id: '10',
     imageUrl: require('../assets/House10.jpg'), // Use require function directly
-    location: 'Seixas, Caminha, Portugal',
+    location: 'Auberge Saint-Antoine, Portugal',
     dateRange: '18-23 mai',
-    price: '1170 € par nuit',
+    price: '400 € par mois',
     rating: '4,8',
     favorite: false,
   },
   {
     id: '11',
     imageUrl: require('../assets/House11.jpg'), // Use require function directly
-    location: 'Estercuel, Espagne',
+    location: 'Hôtel Le Germain Québec',
     constructionDate: '1628',
     dateRange: '19-24 mai',
-    price: '55 € par nuit',
+    price: '1492 € par mois',
     rating: '5,0',
     favorite: false,
   },
@@ -151,6 +151,7 @@ const Search = () => {
   );
 
   return (
+    
     <View style={styles.container}>
       <View style={styles.searchContainer}>
         <MaterialCommunityIcons name="magnify" size={24} color="#000" />
@@ -173,6 +174,7 @@ const Search = () => {
         >
           <View style={styles.modalView}>
             <Text style={styles.location}>{selectedProperty.location}</Text>
+            <Image source={selectedProperty.imageUrl} style={styles.image} />
             <Text style={styles.price}>{selectedProperty.price}</Text>
             <Text style={styles.constructionDate}>Construction Date: {selectedProperty.constructionDate}</Text>
             <Text style={styles.dateRange}>Available: {selectedProperty.dateRange}</Text>
@@ -237,7 +239,7 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: 200,
-
+    borderRadius:20,
   },
   cardContent: {
     padding: 10,
